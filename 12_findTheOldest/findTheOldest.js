@@ -2,7 +2,8 @@
 const people = [
     {
       name: "Carly",
-      yearOfBirth: 1066,
+      yearOfBirth: 1942,
+      yearOfDeath: 1970,
     },
     {
       name: "Ray",
@@ -22,6 +23,9 @@ function findTheOldest(people){
     if(item.yearOfDeath === undefined)  {data['age'] = parseInt(currentYear) -  parseInt(item.yearOfBirth)}
     else {data['age'] = parseInt(item.yearOfDeath) -  parseInt(item.yearOfBirth) }
     return data;})
+    let nameOldest = (nameAge.sort((firstItem, secondItem) => secondItem.age - firstItem.age))[0];
+    return nameOldest;
+    
 }
 console.log(findTheOldest(people));
 // Do not edit below this line
